@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+}
+
+header button {
+    margin: 2%;
+    width: 150px;
+    background: white;
+    text-align: center;
+    padding: 9px 0;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    
+}
+
+header h3 {
+    margin: 3%;
+}
+
+main {
+    margin: 7%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+main h1 {
+    padding: 5%;
+}
