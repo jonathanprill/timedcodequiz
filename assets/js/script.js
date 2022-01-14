@@ -6,7 +6,7 @@ var choicesEl = document.querySelector("#choices");
 
 var buttonsEl = document.querySelector("#buttons");
 
-
+var score = 0;
 
 
 
@@ -46,8 +46,6 @@ var createButton4 = function() {
     pageContentEl.appendChild(btn4);
 }
 
-//END CREATES BUTTONS
-
 
 
 
@@ -62,20 +60,83 @@ var createQuestion = function() {
     pageContentEl.appendChild(headTextEl);
 }
 
-var CreateEndScreen = function() {
-    headTextEl = document.createElement("h1");
-    headTextEl.innerHTML = "All Done!";
-    headTextEl.className = "head-text"
-    pageContentEl.appendChild(headTextEl);
+// var CreateEndScreen = function() {
+//     headTextEl = document.createElement("h1");
+//     headTextEl.innerHTML = "All Done!";
+//     headTextEl.className = "head-text"
+//     pageContentEl.appendChild(headTextEl);
 
-    informativeTextEl = document.createElement("p");
-    informativeTextEl.innerHTML = "Your high score is___"
-    informativeTextEl.className = "informative-text"
-    pageContentEl.appendChild(informativeTextEl);
+//     informativeTextEl = document.createElement("p");
+//     informativeTextEl.innerHTML = "Your high score is " + score + "/5"
+//     informativeTextEl.className = "informative-text"
+//     pageContentEl.appendChild(informativeTextEl);
+// }
+
+
+
+
+
+//Correct Vs Incorrect Variables
+
+var correctVar1 = function() {
+    console.log("Right!");
+    score++;
+    question2();
+}
+
+var incorrectVar1 = function() {
+    console.log("Wrong!")
+    question2();
 }
 
 
-//END CREATES QUESTIONS and ALTERNATE SCREENS
+var correctVar2 = function() {
+    console.log("Right!");
+    score++;
+    question3();
+}
+
+var incorrectVar2 = function() {
+    console.log("Wrong!")
+    question3();
+}
+
+
+var correctVar3 = function() {
+    console.log("Right!");
+    score++;
+    question4();
+}
+
+var incorrectVar3 = function() {
+    console.log("Wrong!")
+    question4();
+}
+
+var correctVar4 = function() {
+    console.log("Right!");
+    score++;
+    question5();
+}
+
+var incorrectVar4 = function() {
+    console.log("Wrong!")
+    question5();
+}
+
+var correctVar5 = function() {
+    console.log("Right!");
+    score++;
+    endScreen();
+}
+
+var incorrectVar5 = function() {
+    console.log("Wrong!")
+    endScreen();
+}
+
+
+
 
 
 
@@ -89,100 +150,142 @@ var CreateEndScreen = function() {
 var question1 = function() {
     pageContentEl.innerHTML = "";
     createQuestion();
-    headTextEl.innerHTML = "What should question 1 be?";
     createButton1();
     createButton2();
     createButton3();
     createButton4();
-   
-    selection1.addEventListener("click", question2);
-    selection2.addEventListener("click", question2);
-    selection3.addEventListener("click", question2);
-    selection4.addEventListener("click", question2);
+
+    headTextEl.innerHTML = "What animal is best?";
+    selection1.innerHTML = "Dogs";
+    selection2.innerHTML = "Cats";
+    selection3.innerHTML = "Squirrels";
+    selection4.innerHTML = "Birds";
+
+    selection1.addEventListener("click", correctVar1);
+    selection2.addEventListener("click", incorrectVar1);
+    selection3.addEventListener("click", incorrectVar1);
+    selection4.addEventListener("click", incorrectVar1);
+
 }
 
 
 var question2 = function() {
     pageContentEl.innerHTML = "";
     createQuestion();
-    headTextEl.innerHTML = "What should question 2 be?";
     createButton1();
     createButton2();
     createButton3();
     createButton4();
+    
+    headTextEl.innerHTML = "What my favorite food?";
+    selection1.innerHTML = "Pizza";
+    selection2.innerHTML = "Burgers";
+    selection3.innerHTML = "BBQ";
+    selection4.innerHTML = "Pasta";
 
-    selection1.addEventListener("click", question3);
-    selection2.addEventListener("click", question3);
-    selection3.addEventListener("click", question3);
-    selection4.addEventListener("click", question3);
+    selection1.addEventListener("click", incorrectVar2);
+    selection2.addEventListener("click", incorrectVar2);
+    selection3.addEventListener("click", correctVar1);
+    selection4.addEventListener("click", incorrectVar2);
    
 }
 
 var question3 = function() {
     pageContentEl.innerHTML = "";
     createQuestion();
-    headTextEl.innerHTML = "What should question 3 be?";
     createButton1();
     createButton2();
     createButton3();
     createButton4();
+    
+    headTextEl.innerHTML = "What my favorite sport?";
+    selection1.innerHTML = "Tennis";
+    selection2.innerHTML = "Chess";
+    selection3.innerHTML = "Surfing";
+    selection4.innerHTML = "MTBing";
 
-    selection1.addEventListener("click", question4);
-    selection2.addEventListener("click", question4);
-    selection3.addEventListener("click", question4);
-    selection4.addEventListener("click", question4);
+    selection1.addEventListener("click", incorrectVar3);
+    selection2.addEventListener("click", incorrectVar3);
+    selection3.addEventListener("click", incorrectVar3);
+    selection4.addEventListener("click", correctVar3);
    
 }
 
 var question4 = function() {
     pageContentEl.innerHTML = "";
     createQuestion();
-    headTextEl.innerHTML = "What should question 4 be?";
     createButton1();
     createButton2();
     createButton3();
     createButton4();
+    
+    headTextEl.innerHTML = "What do I do most?";
+    selection1.innerHTML = "Gym";
+    selection2.innerHTML = "Sauna";
+    selection3.innerHTML = "Bike";
+    selection4.innerHTML = "Hike";
 
-    selection1.addEventListener("click", question5);
-    selection2.addEventListener("click", question5);
-    selection3.addEventListener("click", question5);
-    selection4.addEventListener("click", question5);
+    selection1.addEventListener("click", correctVar4);
+    selection2.addEventListener("click", incorrectVar4);
+    selection3.addEventListener("click", incorrectVar4);
+    selection4.addEventListener("click", incorrectVar4);
    
 }
 
 var question5 = function() {
     pageContentEl.innerHTML = "";
     createQuestion();
-    headTextEl.innerHTML = "What should question 5 be?";
     createButton1();
     createButton2();
     createButton3();
     createButton4();
+    
+    headTextEl.innerHTML = "What the hardest chess opening?";
+    selection1.innerHTML = "London";
+    selection2.innerHTML = "Karo Cann";
+    selection3.innerHTML = "Kings Indian";
+    selection4.innerHTML = "Neidorph";
 
-    selection1.addEventListener("click", endScreen);
-    selection2.addEventListener("click", endScreen);
-    selection3.addEventListener("click", endScreen);
-    selection4.addEventListener("click", endScreen);
+    selection1.addEventListener("click", incorrectVar5);
+    selection2.addEventListener("click", incorrectVar5);
+    selection3.addEventListener("click", incorrectVar5);
+    selection4.addEventListener("click", correctVar5);
    
 }
 
 var endScreen = function() {
     pageContentEl.innerHTML = "";
-    CreateEndScreen();
-    createButton1();
-    createButton2();
-    createButton3();
-    createButton4();
+    headTextEl = document.createElement("h1");
+    headTextEl.innerHTML = "All Done!";
+    headTextEl.className = "head-text"
+    pageContentEl.appendChild(headTextEl);
 
-    selection1.addEventListener("click", question3);
-    selection2.addEventListener("click", question3);
-    selection3.addEventListener("click", question3);
-    selection4.addEventListener("click", question3);
+    informativeTextEl = document.createElement("p");
+    informativeTextEl.innerHTML = "Your high score is " + score + "/5"
+    informativeTextEl.className = "informative-text"
+    pageContentEl.appendChild(informativeTextEl);
+
+    var submitButton = document.createElement("button");
+    submitButton.textContent = "Submit";
+    submitButton.className = "btn";
+    submitButton.id = 'submitId';
+    pageContentEl.appendChild(submitButton);
+    
+    
+    
+    
+
+    submitId.addEventListener('click', function(event){
+        event.preventDefault() //prevent form from autosubmitting...got from youtube
+
+       
+        console.log(score)
+    });
+    
    
 }
 
 
-//END INTERACTIVE PAGES
 
 
 
@@ -190,6 +293,7 @@ var endScreen = function() {
 
 
 
+//starts the game
 
 buttonsEl.addEventListener("click", question1);
 
