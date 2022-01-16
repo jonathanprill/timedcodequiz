@@ -185,7 +185,7 @@ var question2 = function() {
 
     selection1.addEventListener("click", incorrectVar2);
     selection2.addEventListener("click", incorrectVar2);
-    selection3.addEventListener("click", correctVar1);
+    selection3.addEventListener("click", correctVar2);
     selection4.addEventListener("click", incorrectVar2);
    
 }
@@ -256,33 +256,41 @@ var question5 = function() {
 var endScreen = function() {
     pageContentEl.innerHTML = "";
     headTextEl = document.createElement("h1");
-    headTextEl.innerHTML = "All Done!";
+    headTextEl.innerHTML = "You Scored a " + score + "/5";
     headTextEl.className = "head-text"
     pageContentEl.appendChild(headTextEl);
 
     informativeTextEl = document.createElement("p");
-    informativeTextEl.innerHTML = "Your high score is " + score + "/5"
+    informativeTextEl.innerHTML = "Enter Your Name: "
     informativeTextEl.className = "informative-text"
     pageContentEl.appendChild(informativeTextEl);
 
+    var nameInput = document.createElement("input");
+    informativeTextEl.appendChild(nameInput);
+
     var submitButton = document.createElement("button");
     submitButton.textContent = "Submit";
+    submitButton.type = 'submit';
     submitButton.className = "btn";
     submitButton.id = 'submitId';
     pageContentEl.appendChild(submitButton);
     
     
     
-    
 
-    submitId.addEventListener('click', function(event){
-        event.preventDefault() //prevent form from autosubmitting...got from youtube
+    submitButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        
 
-       
-        console.log(score)
+    // Learned how to add to an existing array in local storage here https://stackoverflow.com/questions/19635077/adding-objects-to-array-in-localstorage
+    var existingEntries = JSON.parse(localStorage.getItem("scoreKey")); 
+    if(existingEntries == null) existingEntries = [];
+    var highScores = [nameInput.value.trim(), score];
+    existingEntries.push(highScores);
+    localStorage.setItem("scoreKey", JSON.stringify(existingEntries));
+    window.location.assign("index.html");           //got this code from youTube video https://www.youtube.com/watch?v=DFhmNLKwwGw
     });
     
-   
 }
 
 
