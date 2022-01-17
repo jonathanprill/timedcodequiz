@@ -7,6 +7,6 @@ The link to deployed website:
 
 ScreenShots:
 
-![ScreenShot](/timedcodequiz/assets/images/screenshot1.png "screenshot1")
-![ScreenShot](/timedcodequiz/assets/images/screenshot2.png "screenshot2")
-![ScreenShot](/timedcodequiz/assets/images/screenshot3.png "screenshot3")
+![ScreenShot](/assets/images/screenshot1.png "screenshot1")
+![ScreenShot](/assets/images/screenshot2.png "screenshot2")
+![ScreenShot](/assets/images/screenshot3.png "screenshot3")
