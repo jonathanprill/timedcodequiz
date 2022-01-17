@@ -1,9 +1,9 @@
+//Global Variables for selecting ID's within HTML
+
 var headTextEl = document.querySelector("#head-text");
 var informativeTextEl = document.querySelector("#informative-text");
 var pageContentEl = document.querySelector("#page-content")
-
 var choicesEl = document.querySelector("#choices");
-
 var buttonsEl = document.querySelector("#buttons");
 
 
@@ -190,10 +190,6 @@ var incorrectVar10 = function() {
     endScreen();
     timeLeft = timeLeft - 10;
 }
-
-
-
-
 
 
 
@@ -458,7 +454,7 @@ var endScreen = function() {
     
 }
 
-
+//COUNTDOWN TIMER - Got some of this code from classwork example
 
 var timerEl = document.getElementById('timer');
 var timeLeft = 75;
