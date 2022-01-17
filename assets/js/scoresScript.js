@@ -28,35 +28,35 @@ var userFour = topScorerFour[4];
 
 
 
-var listZero = document.createElement("li");
-listZero.innerHTML = "Name: " + userZero.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userZero.score;
-listZero.className = "head-text"
-orderedListEl.appendChild(listZero);
+var orderedList = document.createElement("li");
+orderedList.innerHTML = "Name: " + userZero.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userZero.score;
+orderedList.className = "head-text"
+orderedListEl.appendChild(orderedList);
 
 
 
-var listOne = document.createElement("li");
-listOne.innerHTML = "Name: " + userOne.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userOne.score;
-listOne.className = "head-text"
-orderedListEl.appendChild(listOne);
+var orderedList = document.createElement("li");
+orderedList.innerHTML = "Name: " + userOne.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userOne.score;
+orderedList.className = "head-text"
+orderedListEl.appendChild(orderedList);
 
 
-var listOne = document.createElement("li");
-listOne.innerHTML = "Name: " + userTwo.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userTwo.score;
-listOne.className = "head-text"
-orderedListEl.appendChild(listOne);
+var orderedList = document.createElement("li");
+orderedList.innerHTML = "Name: " + userTwo.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userTwo.score;
+orderedList.className = "head-text"
+orderedListEl.appendChild(orderedList);
 
 
-var listOne = document.createElement("li");
-listOne.innerHTML = "Name: " + userThree.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userThree.score;
-listOne.className = "head-text"
-orderedListEl.appendChild(listOne);
+var orderedList = document.createElement("li");
+orderedList.innerHTML = "Name: " + userThree.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userThree.score;
+orderedList.className = "head-text"
+orderedListEl.appendChild(orderedList);
 
 
-var listOne = document.createElement("li");
-listOne.innerHTML = "Name: " + userFour.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userFour.score;
-listOne.className = "head-text"
-orderedListEl.appendChild(listOne);
+var orderedList = document.createElement("li");
+orderedList.innerHTML = "Name: " + userFour.userName + "\xa0\xa0\xa0\xa0\xa0\xa0 Score: " + userFour.score;
+orderedList.className = "head-text"
+orderedListEl.appendChild(orderedList);
 
 
 

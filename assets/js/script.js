@@ -6,6 +6,8 @@ var choicesEl = document.querySelector("#choices");
 
 var buttonsEl = document.querySelector("#buttons");
 
+
+
 var score = 0;
 
 
@@ -51,7 +53,7 @@ var createButton4 = function() {
 
 
 
-//CREATES QUESTIONS and ALTERNATE SCREENS
+//CREATES QUESTIONS
 
 var createQuestion = function() {
     headTextEl = document.createElement("h1");
@@ -60,17 +62,6 @@ var createQuestion = function() {
     pageContentEl.appendChild(headTextEl);
 }
 
-// var CreateEndScreen = function() {
-//     headTextEl = document.createElement("h1");
-//     headTextEl.innerHTML = "All Done!";
-//     headTextEl.className = "head-text"
-//     pageContentEl.appendChild(headTextEl);
-
-//     informativeTextEl = document.createElement("p");
-//     informativeTextEl.innerHTML = "Your high score is " + score + "/5"
-//     informativeTextEl.className = "informative-text"
-//     pageContentEl.appendChild(informativeTextEl);
-// }
 
 
 
@@ -87,6 +78,7 @@ var correctVar1 = function() {
 var incorrectVar1 = function() {
     console.log("Wrong!")
     question2();
+    timeLeft = timeLeft - 10;
 }
 
 
@@ -99,6 +91,7 @@ var correctVar2 = function() {
 var incorrectVar2 = function() {
     console.log("Wrong!")
     question3();
+    timeLeft = timeLeft - 10;
 }
 
 
@@ -111,6 +104,7 @@ var correctVar3 = function() {
 var incorrectVar3 = function() {
     console.log("Wrong!")
     question4();
+    timeLeft = timeLeft - 10;
 }
 
 var correctVar4 = function() {
@@ -122,19 +116,80 @@ var correctVar4 = function() {
 var incorrectVar4 = function() {
     console.log("Wrong!")
     question5();
+    timeLeft = timeLeft - 10;
 }
 
 var correctVar5 = function() {
     console.log("Right!");
     score++;
-    endScreen();
+    question6();
 }
 
 var incorrectVar5 = function() {
     console.log("Wrong!")
+    question6();
+    timeLeft = timeLeft - 10;
+}
+
+var correctVar6 = function() {
+    console.log("Right!");
+    score++;
+    question7();
+}
+
+var incorrectVar6 = function() {
+    console.log("Wrong!")
+    question7();
+    timeLeft = timeLeft - 10;
+}
+
+var correctVar7 = function() {
+    console.log("Right!");
+    score++;
+    question8();
+}
+
+var incorrectVar7 = function() {
+    console.log("Wrong!")
+    question8();
+    timeLeft = timeLeft - 10;
+}
+
+var correctVar8 = function() {
+    console.log("Right!");
+    score++;
+    question9();
+}
+
+var incorrectVar8 = function() {
+    console.log("Wrong!")
+    question9();
+    timeLeft = timeLeft - 10;
+}
+
+var correctVar9 = function() {
+    console.log("Right!");
+    score++;
+    question10();
+}
+
+var incorrectVar9 = function() {
+    console.log("Wrong!")
+    question10();
+    timeLeft = timeLeft - 10;
+}
+
+var correctVar10 = function() {
+    console.log("Right!");
+    score++;
     endScreen();
 }
 
+var incorrectVar10 = function() {
+    console.log("Wrong!")
+    endScreen();
+    timeLeft = timeLeft - 10;
+}
 
 
 
@@ -155,11 +210,11 @@ var question1 = function() {
     createButton3();
     createButton4();
 
-    headTextEl.innerHTML = "What animal is best?";
-    selection1.innerHTML = "Dogs";
-    selection2.innerHTML = "Cats";
-    selection3.innerHTML = "Squirrels";
-    selection4.innerHTML = "Birds";
+    headTextEl.innerHTML = "Which is NOT a Primitive Data Type?";
+    selection1.innerHTML = "Function";
+    selection2.innerHTML = "Number";
+    selection3.innerHTML = "String";
+    selection4.innerHTML = "Boolean";
 
     selection1.addEventListener("click", correctVar1);
     selection2.addEventListener("click", incorrectVar1);
@@ -177,11 +232,11 @@ var question2 = function() {
     createButton3();
     createButton4();
     
-    headTextEl.innerHTML = "What my favorite food?";
-    selection1.innerHTML = "Pizza";
-    selection2.innerHTML = "Burgers";
-    selection3.innerHTML = "BBQ";
-    selection4.innerHTML = "Pasta";
+    headTextEl.innerHTML = "Which special characters incase an array?";
+    selection1.innerHTML = "{}";
+    selection2.innerHTML = "()";
+    selection3.innerHTML = "[]";
+    selection4.innerHTML = "<>";
 
     selection1.addEventListener("click", incorrectVar2);
     selection2.addEventListener("click", incorrectVar2);
@@ -198,11 +253,11 @@ var question3 = function() {
     createButton3();
     createButton4();
     
-    headTextEl.innerHTML = "What my favorite sport?";
-    selection1.innerHTML = "Tennis";
-    selection2.innerHTML = "Chess";
-    selection3.innerHTML = "Surfing";
-    selection4.innerHTML = "MTBing";
+    headTextEl.innerHTML = "How would you form a conditional statement?";
+    selection1.innerHTML = "for...";
+    selection2.innerHTML = "for...loop";
+    selection3.innerHTML = "function()";
+    selection4.innerHTML = "if...else";
 
     selection1.addEventListener("click", incorrectVar3);
     selection2.addEventListener("click", incorrectVar3);
@@ -219,11 +274,11 @@ var question4 = function() {
     createButton3();
     createButton4();
     
-    headTextEl.innerHTML = "What do I do most?";
-    selection1.innerHTML = "Gym";
-    selection2.innerHTML = "Sauna";
-    selection3.innerHTML = "Bike";
-    selection4.innerHTML = "Hike";
+    headTextEl.innerHTML = "What runs until a condition is false?";
+    selection1.innerHTML = "loops";
+    selection2.innerHTML = "functions";
+    selection3.innerHTML = "objects";
+    selection4.innerHTML = "methods";
 
     selection1.addEventListener("click", correctVar4);
     selection2.addEventListener("click", incorrectVar4);
@@ -240,11 +295,11 @@ var question5 = function() {
     createButton3();
     createButton4();
     
-    headTextEl.innerHTML = "What the hardest chess opening?";
-    selection1.innerHTML = "London";
-    selection2.innerHTML = "Karo Cann";
-    selection3.innerHTML = "Kings Indian";
-    selection4.innerHTML = "Neidorph";
+    headTextEl.innerHTML = "What word describes an action that travels upwards through parent elements?";
+    selection1.innerHTML = "layering";
+    selection2.innerHTML = "cascading";
+    selection3.innerHTML = "fracturing";
+    selection4.innerHTML = "bubbling";
 
     selection1.addEventListener("click", incorrectVar5);
     selection2.addEventListener("click", incorrectVar5);
@@ -253,10 +308,116 @@ var question5 = function() {
    
 }
 
+var question6 = function() {
+    pageContentEl.innerHTML = "";
+    createQuestion();
+    createButton1();
+    createButton2();
+    createButton3();
+    createButton4();
+    
+    headTextEl.innerHTML = "How could you target an HTML id in javascript";
+    selection1.innerHTML = ".addEventListener";
+    selection2.innerHTML = ".querySelector";
+    selection3.innerHTML = ".createElement";
+    selection4.innerHTML = ".parse";
+
+    selection1.addEventListener("click", incorrectVar6);
+    selection2.addEventListener("click", correctVar6);
+    selection3.addEventListener("click", incorrectVar6);
+    selection4.addEventListener("click", incorrectVar6);
+   
+}
+
+var question7 = function() {
+    pageContentEl.innerHTML = "";
+    createQuestion();
+    createButton1();
+    createButton2();
+    createButton3();
+    createButton4();
+    
+    headTextEl.innerHTML = "How do you pull something from local storage?";
+    selection1.innerHTML = ".setItem";
+    selection2.innerHTML = ".parse";
+    selection3.innerHTML = ".pullItem";
+    selection4.innerHTML = ".getItem";
+
+    selection1.addEventListener("click", incorrectVar7);
+    selection2.addEventListener("click", incorrectVar7);
+    selection3.addEventListener("click", incorrectVar7);
+    selection4.addEventListener("click", correctVar7);
+   
+}
+
+var question8 = function() {
+    pageContentEl.innerHTML = "";
+    createQuestion();
+    createButton1();
+    createButton2();
+    createButton3();
+    createButton4();
+    
+    headTextEl.innerHTML = "What function pertains to button clicks?";
+    selection1.innerHTML = ".matches()";
+    selection2.innerHTML = ".setItem";
+    selection3.innerHTML = ".addEventListener()";
+    selection4.innerHTML = ".setAttribute()";
+
+    selection1.addEventListener("click", incorrectVar8);
+    selection2.addEventListener("click", incorrectVar8);
+    selection3.addEventListener("click", correctVar8);
+    selection4.addEventListener("click", incorrectVar8);
+   
+}
+
+var question9 = function() {
+    pageContentEl.innerHTML = "";
+    createQuestion();
+    createButton1();
+    createButton2();
+    createButton3();
+    createButton4();
+    
+    headTextEl.innerHTML = "Which concept pertains to the DOM?";
+    selection1.innerHTML = "Web API";
+    selection2.innerHTML = "Bubbling";
+    selection3.innerHTML = "Arrays";
+    selection4.innerHTML = "Loops";
+
+    selection1.addEventListener("click", correctVar9);
+    selection2.addEventListener("click", incorrectVar9);
+    selection3.addEventListener("click", incorrectVar9);
+    selection4.addEventListener("click", incorrectVar9);
+   
+}
+
+var question10 = function() {
+    pageContentEl.innerHTML = "";
+    createQuestion();
+    createButton1();
+    createButton2();
+    createButton3();
+    createButton4();
+    
+    headTextEl.innerHTML = "Bonus: Which pawn is being gambitted in the Queens Gambit?";
+    selection1.innerHTML = "E Pawn";
+    selection2.innerHTML = "D Pawn";
+    selection3.innerHTML = "F Pawn";
+    selection4.innerHTML = "C Pawn";
+
+    selection1.addEventListener("click", incorrectVar10);
+    selection2.addEventListener("click", incorrectVar10);
+    selection3.addEventListener("click", incorrectVar10);
+    selection4.addEventListener("click", correctVar10);
+   
+}
+
+
 var endScreen = function() {
     pageContentEl.innerHTML = "";
     headTextEl = document.createElement("h1");
-    headTextEl.innerHTML = "You Scored a " + score + "/5";
+    headTextEl.innerHTML = "You Scored a " + score + "/10";
     headTextEl.className = "head-text"
     pageContentEl.appendChild(headTextEl);
 
@@ -299,6 +460,25 @@ var endScreen = function() {
 
 
 
+var timerEl = document.getElementById('timer');
+var timeLeft = 75;
+function countdown() {
+    
+  
+    
+    var timeInterval = setInterval(function() {
+  
+      timerEl.innerHTML = timeLeft;
+      if (timeLeft <= 0) {
+        endScreen();
+        clearInterval(timeInterval);
+        timerEl.textContent = "";
+      }
+
+      timeLeft--;
+
+    }, 1000);
+}
 
 
 
@@ -308,6 +488,7 @@ var endScreen = function() {
 //starts the game
 
 buttonsEl.addEventListener("click", question1);
+buttonsEl.addEventListener("click", countdown);
 
 
 
