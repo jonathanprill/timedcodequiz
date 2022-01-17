@@ -7,5 +7,6 @@ The link to deployed website:
 
 ScreenShots:
 
-![ScreenShot](/horiseon/assets/images/HoriseonLandingPage1.png "screenshot1")
-![ScreenShot](/horiseon/assets/images/HoriseonLandingPage2.png "screenshot2")
+![ScreenShot](/timedcodequiz/assets/images/screenshot1.png "screenshot1")
+![ScreenShot](/timedcodequiz/assets/images/screenshot2.png "screenshot2")
+![ScreenShot](/timedcodequiz/assets/images/screenshot3.png "screenshot3")
