@@ -282,13 +282,17 @@ var endScreen = function() {
         event.preventDefault();
         
 
-    // Learned how to add to an existing array in local storage here https://stackoverflow.com/questions/19635077/adding-objects-to-array-in-localstorage
-    var existingEntries = JSON.parse(localStorage.getItem("scoreKey")); 
-    if(existingEntries == null) existingEntries = [];
-    var highScores = [nameInput.value.trim(), score];
-    existingEntries.push(highScores);
-    localStorage.setItem("scoreKey", JSON.stringify(existingEntries));
-    window.location.assign("index.html");           //got this code from youTube video https://www.youtube.com/watch?v=DFhmNLKwwGw
+        // Learned how to add to an existing array in local storage here https://stackoverflow.com/questions/19635077/adding-objects-to-array-in-localstorage 
+        // Learned how to sort and keep just top scores in array here https://stackoverflow.com/questions/47858518/highscore-in-local-storage-javascript
+        const result = {userName: nameInput.value, score: score}
+        const savedScores = localStorage.getItem('scoreKey') || '[]' // get the score, or the initial value if empty
+        const highscores = [...JSON.parse(savedScores), result] // add the result
+          .sort((a, b) => b.score - a.score) // sort descending
+          .slice(0, 5) // take highest 5
+        localStorage.setItem('scoreKey', JSON.stringify(highscores))
+
+
+        window.location.assign("index.html");           //got this code from youTube video https://www.youtube.com/watch?v=DFhmNLKwwGw
     });
     
 }
